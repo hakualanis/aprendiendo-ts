@@ -28,3 +28,6 @@ console.log("El item fantasma da como resultado:", itemFantasma);
 const totalItems = cofre.reduce((acumulador, item) => acumulador + item.cantidad, 0);
 
 console.log("Total de items en el cofre:", totalItems); 
+
+// Respuesta para el reporte: 
+// Cuando la función buscar (find) intenta encontrar un item que no existe, devuelve undefined.
