@@ -12,22 +12,25 @@ const cofre: Item[] = [
   { nombre: "Piedra", cantidad: 256, rareza: "comun" }
 ];
 
-const soloRaros = cofre.filter((item) => item.rareza === "raro");
-console.log("Items raros:", soloRaros);
+function soloRaros(inventario: Item[]): Item[] {
+  return inventario.filter((item) => item.rareza === "raro");
+}
 
-const nombresEnMayusculas = cofre.map((item) => item.nombre.toUpperCase());
+function nombresEnMayusculas(inventario: Item[]): string[] {
+  return inventario.map((item) => item.nombre.toUpperCase());
+}
 
-console.log("Nombres en mayúsculas:", nombresEnMayusculas);
+function buscar(inventario: Item[], nombreBuscado: string) {
+  return inventario.find((item) => item.nombre === nombreBuscado);
+}
 
-const itemEncontrado = cofre.find((item) => item.nombre === "Diamante");
-console.log("Item encontrado:", itemEncontrado);
-
-const itemFantasma = cofre.find((item) => item.nombre === "Espada de Netherite");
-console.log("El item fantasma da como resultado:", itemFantasma);
-
-const totalItems = cofre.reduce((acumulador, item) => acumulador + item.cantidad, 0);
-
-console.log("Total de items en el cofre:", totalItems); 
+function contarItems(inventario: Item[]): number {
+  return inventario.reduce((acumulador, item) => acumulador + item.cantidad, 0);
+}
+console.log("Solo raros:", soloRaros(cofre));
+console.log("En mayúsculas:", nombresEnMayusculas(cofre));
+console.log("Buscando Diamante:", buscar(cofre, "Diamante"));
+console.log("Total de items:", contarItems(cofre));
 
 // Respuesta para el reporte: 
 // Cuando la función buscar (find) intenta encontrar un item que no existe, devuelve undefined.

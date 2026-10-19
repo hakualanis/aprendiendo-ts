@@ -27,3 +27,14 @@ if (miItem) {
 } else {
   console.log("No hay ningún item en esa posición.");
 }
+
+// La prueba del detective que pidió tu hermano
+const resultadoBusqueda = cofre.find((item) => item.nombre === "Pocion de curacion");
+
+if (resultadoBusqueda) {
+  // Si lo encuentra, lo describe
+  console.log(describirItem(resultadoBusqueda));
+} else {
+  // Si es undefined, entra al else y muestra este mensaje
+  console.log("Nelson, ese item no existe en el cofre.");
+}
